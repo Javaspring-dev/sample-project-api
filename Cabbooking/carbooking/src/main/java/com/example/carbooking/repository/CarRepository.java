@@ -2,8 +2,13 @@ package com.example.carbooking.repository;
 
 import com.example.carbooking.entities.CarEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface CarRepository extends JpaRepository<CarEntity,Long> {
+
+import java.util.Optional;
+
+
+public interface CarRepository extends JpaRepository<CarEntity, Long> {
+    Optional<CarEntity> findByRegistrationNumber(String registrationNumber);
 }
+
+
